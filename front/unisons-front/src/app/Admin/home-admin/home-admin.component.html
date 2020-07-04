@@ -1,0 +1,284 @@
+<body>
+    <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-arrow-up" aria-hidden="true"></i> (Top)</button>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        
+      <!-- <a class="navbar-brand " href="#"><p class="text-success">UNISONS</p></a> -->
+      <h2 class="text-success">UNISONS</h2>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse " id="collapsibleNavbar">
+
+
+        <ul class="nav justify-content-center">
+          <li class="nav-item">
+            <a class="active nav-link" href={{home_url}}>Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href={{upload_url}}>Upload</a>
+          </li>
+        </ul>
+
+      </div>
+      <div class="form-group">
+      <button type="submit" class="btn btn-success" (click)="logout()">Logout</button>
+    </div>
+      <a href="#" class="fa fa-facebook"></a>
+      <a href="#" class="fa fa-youtube"></a>
+      <a href="#" class="fa fa-instagram"></a>
+     
+    </nav>
+    
+    <div class="fluid-container">
+        <img src="../../../assets/img/banner/banner.png" alt="Snow" style="width:100%;">
+
+    </div>
+    <br>
+
+
+    <div class="raw">
+    
+        <div class="col-2">
+
+        </div>
+
+    <div class="col-2">
+        
+    </div>
+
+    </div>
+
+
+    <br>
+    <br>
+    <h1 class="title text-center p-3 mb-2 bg-success text-white" >UNISONS - New Release Video </h1>
+    <br>
+    <br>
+
+    <div class="container" style="margin-top:30px">
+
+        <div class="row">        
+            <div class="col-sm-12">
+
+            <section id="video">           
+                <div class="row justify-content-center mb-20">
+                    <div class="col-xl-10">
+                      
+                        <div class="row align-items-center">
+
+                            <div class="name">
+                                <h4>{{videos[0].title}}</h4>
+                                <p>{{videos[0].upload_date}}</p>
+                                <!-- <h4>"{{videos[0].url}}"</h4> -->
+                            </div>
+                          
+                             <div class="col-xl-9 col-md-9">
+                                      
+                              <div class="music_field">
+                                                 
+                                  <div class="audio_name">    
+                                                          <div class="embed-responsive embed-responsive-21by9">
+                                                          <iframe class="embed-responsive-item" width="90%" height="100%" src=videos[0].url frameborder="0" allowfullscreen></iframe>
+                                                          </div>	
+                             
+                                </div>
+                              </div>
+                             </div>
+                             <div class="col-xl-2 col-md-2">
+                                <div class="music_btn">
+                                <div class="container">
+            
+                                    <a href="#" class="btn btn-info btn-lg">
+                                    <i class="fa fa-thumbs-o-up" aria-hidden="true"> Like</i>
+                                    <span class="badge badge-light"> {{videos[0].likes}} </span>
+                                    </a>
+
+                                    <p>
+                                    Hit your like to this video.
+                                    </p> 
+
+                                </div> 
+                                </div>
+                             </div>
+                      		
+                      </div>
+                  </div>
+
+              </div>		
+          </section>           
+        </div>
+        </div>     
+    </div>
+
+
+<br>
+<br>
+<br>
+<br>
+
+    <h1 class="title text-center p-3 mb-2 bg-success text-white">UNISONS-Latest other videos</h1>
+    <br>
+    <br>
+    <div class="container" style="margin-top:30px">
+
+    <div class="row" *ngFor="let item of videos" >        
+        <div class="col-sm-12">
+
+        <section id="video">           
+            <div class="row justify-content-center mb-20">
+                <div class="col-xl-10">
+                  
+                    <div class="row align-items-center">
+
+                        <div class="name">
+                            <h4>{{item.title}}</h4>
+                            <p>{{item.upload_date}}</p>
+                        </div>
+                         
+                         <div class="col-xl-9 col-md-9">
+                                  
+                          <div class="music_field">
+                                             
+                              <div class="audio_name">     
+                                <div class="embed-responsive embed-responsive-21by9">
+                                    <iframe class="embed-responsive-item" width="90%" height="100%" src=item.url frameborder="0" allowfullscreen></iframe>
+                                  </div>	
+                                                     
+                              </div>
+                          </div>
+                         </div>
+                         <div class="col-xl-2 col-md-2">
+                            <div class="music_btn">
+                            <div class="container">
+        
+                                <a href="#" class="btn btn-info btn-lg">
+                                <i class="fa fa-thumbs-o-up" aria-hidden="true"> Like</i>
+                                <span class="badge badge-light"> {{item.likes}} </span>
+                                </a>
+
+                                <p>
+                                Hit your like to this video.
+                                </p> 
+
+                            </div> 
+                            </div>
+                         </div>
+                          
+                  </div>
+              </div>
+
+          </div>		
+      </section>           
+    </div>
+    </div> 
+    <br>
+    <br>
+    <br>
+    <br>
+   
+ 
+    <!-- <br> -->
+
+</div>    
+<br>
+    
+  
+        <footer class="footer">
+            <div class="footer_top">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-7 col-md-7">
+                                <div class="footer_widget">
+                                        <h3 class="footer_title">
+                                                Services
+                                        </h3>
+                                    <div class="subscribe-from">
+                                            <form action="#">
+                                                    <input type="text" placeholder="Enter your mail">
+                                                    <button type="submit" >Subscribe</button>
+                                                </form>
+                                    </div>
+                                    <p class="sub_text">Subscribe our channel.Join with us.</p>
+                                    <p>[ Hope your support <i class="fa fa-heart-o"></i> ]</p>
+                                    </div>
+                        </div>
+                        <div class="col-xl-4 col-md-4 offset-xl-1">
+                            <div class="footer_widget">
+                                   
+                                   
+                                <ul>
+                                    <h3 class="footer_title">
+                                        Contact Me
+                                </h3>
+                                <a href="#"><i style="font-size:24px" class="fa">&#xf0d5;</i>  lahiruhewagama98@gmail.com
+                                        </a>
+<br>
+<br>
+                                    <a href="#"><i style="font-size:24px" class="fa fa-phone" aria-hidden="true"></i>  +94-710158125
+                                    </a><br>
+<br>
+                                    <a href="#"><i style="font-size:24px" class="fa fa-home"></i>  1/64, Pallegama ,Hungama</a>
+                               
+                                    <div class="row">
+
+                                        <div class="socail_links">
+                                            
+                                            <a href="#" class="fa fa-facebook"></a>
+                                            <a href="#" class="fa fa-youtube"></a>
+                                            <a href="#" class="fa fa-instagram"></a>                                                   
+                                            </div>
+                        
+                                    </div>
+
+                            </ul>
+    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="copy-right_text">
+                <div class="container">
+                    <div class="footer_border"></div>
+                    <div class="row">
+                        <div class="col-xl-10 col-md-10">
+                            <p class="copy_right text-center">
+                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+    Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This web site is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://www.youtube.com/channel/UCLKv0PpGHejbXyguMeynlcQ?view_as=subscriber" target="_blank" >UNISONS</a>
+    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            </p>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        
+<script>
+    //Get the button
+    var mybutton = document.getElementById("myBtn");
+    
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function() {scrollFunction()};
+    
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+      } else {
+        mybutton.style.display = "none";
+      }
+    }
+    
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+    </script>
+    
+
+    
+</body>

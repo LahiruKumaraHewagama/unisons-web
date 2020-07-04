@@ -1,0 +1,219 @@
+<body>
+   
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        
+      <!-- <a class="navbar-brand " href="#"><p class="text-success">UNISONS</p></a> -->
+      <h2 class="text-success">UNISONS</h2>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse " id="collapsibleNavbar">
+
+        <ul class="nav justify-content-center">
+            <li class="nav-item">
+              <a class="active nav-link" href="http://localhost:4200/Admin/home-admin">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="http://localhost:4200/about/about">Upload</a>
+            </li>
+          </ul>
+
+      </div>
+      <button type="submit" class="btn btn-success" (click)="logout()">Logout</button>
+
+      <a href="#" class="fa fa-facebook"></a>
+      <a href="#" class="fa fa-youtube"></a>
+      <a href="#" class="fa fa-instagram"></a>
+     
+    </nav>
+    <h1 class="title text-center p-3 mb-2 bg-success text-white" >UNISONS - Upload Video </h1>
+     <!--  <div class="fluid-container">
+        <img src="../../../assets/img/banner/bradcam_2.png" alt="Snow" style="width:100%;">
+
+    </div>   -->
+
+    <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-arrow-up" aria-hidden="true"></i> (Top)</button>
+
+    <br>
+
+
+    <div class="row ">
+        <div class="col-1"></div>
+        <br>
+        
+        <div class="col-3 content-right">
+            <br>
+            <br>
+            <br>
+            <img src="../../../assets/img/banner/logo-channel.jpg" alt="Snow" style="width:50%;">
+        </div>
+
+        <div class="col-6">
+            <div class="w3-container w3-border">
+                <br>
+<br>
+            
+                <form [formGroup]="UploadForm" class="container" id="UploadForm">
+  
+                    <div class="form-group">
+                      <label class="control-label col-sm-2" for="video Title">Video Title:</label>
+                      <div class="col-sm-12">
+                        <input type="text" class="form-control" id="name" placeholder="Enter Video Title" formControlName="Title" [(ngModel)]="video.title" required/>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="date">Date:</label>
+                        <div class="col-sm-12">
+                          <input type="text" class="form-control" id="date" placeholder="Enter upload date" formControlName="Date" [(ngModel)]="video.upload_date" required/>
+                        </div>
+                      </div>
+          
+        
+                    <div class="form-group">
+                      <label class="control-label col-sm-2" for="Link">Video Link:</label>
+                      <div class="col-sm-12">
+                        <input type="text" class="form-control" id="Link" placeholder="Enter Video Link" formControlName="Link" [(ngModel)]="video.url" required />
+                      </div>
+                    </div>
+          
+                    
+                    <div class="form-group btn-center">
+                      <div class="col-sm-4">
+                        <button type="upload"  class="btn btn-success btn-block" (click)='upload()' >UPLOAD</button>
+                      </div>
+                    </div>
+                  </form>
+                  <br>
+<br>
+              
+        
+            
+        </div>
+
+</div>
+<br>
+<br>
+
+        <div class="col-1">
+                                    
+        </div>
+
+    </div>
+
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+
+
+
+
+
+        <footer class="footer">
+            <div class="footer_top">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-7 col-md-7">
+                                <div class="footer_widget">
+                                        <h3 class="footer_title">
+                                                Services
+                                        </h3>
+                                    <div class="subscribe-from">
+                                            <form action="#">
+                                                    <input type="text" placeholder="Enter your mail">
+                                                    <button type="submit" >Subscribe</button>
+                                                </form>
+                                    </div>
+                                    <p class="sub_text">Subscribe our channel.Join with us.</p>
+                                    <p>[ Hope your support <i class="fa fa-heart-o"></i> ]</p>
+                                    </div>
+                        </div>
+                        <div class="col-xl-4 col-md-4 offset-xl-1">
+                            <div class="footer_widget">
+                                   
+                                   
+                                <ul>
+                                    <h3 class="footer_title">
+                                        Contact Me
+                                </h3>
+                                <a href="#"><i style="font-size:24px" class="fa">&#xf0d5;</i>  lahiruhewagama98@gmail.com
+                                        </a>
+<br>
+<br>
+                                    <a href="#"><i style="font-size:24px" class="fa fa-phone" aria-hidden="true"></i>  +94-710158125
+                                    </a><br>
+<br>
+                                    <a href="#"><i style="font-size:24px" class="fa fa-home"></i>  1/64, Pallegama ,Hungama</a>
+
+                                    <div class="row">
+
+                                        <div class="socail_links">
+
+                                            
+                                            <a href="#" class="fa fa-facebook"></a>
+                                            <a href="#" class="fa fa-youtube"></a>
+                                            <a href="#" class="fa fa-instagram"></a>                                                   
+                                            </div>
+                        
+                                    </div>
+
+                                </ul>
+
+                                
+
+    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="copy-right_text">
+                <div class="container">
+                    <div class="footer_border"></div>
+                    <div class="row">
+                        <div class="col-xl-10 col-md-10">
+                            <p class="copy_right text-center">
+                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+    Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This web site is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://www.youtube.com/channel/UCLKv0PpGHejbXyguMeynlcQ?view_as=subscriber" target="_blank" >UNISONS</a>
+    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            </p>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        
+<script>
+    //Get the button
+    var mybutton = document.getElementById("myBtn");
+    
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function() {scrollFunction()};
+    
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+      } else {
+        mybutton.style.display = "none";
+      }
+    }
+    
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+    </script>
+    
+
+    
+</body>
