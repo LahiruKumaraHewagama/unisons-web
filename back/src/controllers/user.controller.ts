@@ -34,3 +34,38 @@ export const login = (req: Request, res: Response) => {
       }
    });
 }
+
+export const addLike = (req: Request, res: Response) => {
+
+   // Example query that you can execute to get all the users from database
+
+   const add_likes_query = "INSERT INTO likes (`email`, `video_id`) values (?,?)";
+   Mysql.getPool().query(add_likes_query, [req.body.email, req.body.video_id], (err: any, results: any) => {
+      if (err) {
+         console.log("Error", err);
+         res.status(500)
+            .json({ "error": err });
+      } else {
+         console.log("Result: ", results);
+         // console.log("ajhfkjaofko::::::::"+req.body.email+"asjfnka"+ req.body.video_id)
+         res.json(results);
+      }
+   }
+   );
+}
+
+
+export const likeVideo = (req: Request, res: Response) => {
+   const get_user_query = "select distinct video_id from likes where email=?";
+   // Example query that you can execute to get all the users from database
+   Mysql.getPool().query(get_user_query, [req.query.email], (err: any, results: any) => {
+      if (err) {
+         console.log("Error", err);
+         res.status(500)
+            .json({ "error": err });
+      } else {
+         console.log("Result: ", results);
+         res.json(results);
+      }
+   });
+}

@@ -6,7 +6,7 @@ create table users(
     name varchar(100),
     country varchar(50),
     pwd varchar(50),
-    privilege boolean
+    privilege boolean default 0
 );
 create table videos(
 video_id int auto_increment primary key,

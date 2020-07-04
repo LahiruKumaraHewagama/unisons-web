@@ -12,22 +12,22 @@
       <div class="collapse navbar-collapse " id="collapsibleNavbar">
 
    
-   
         <ul class="nav justify-content-center">
           <li class="nav-item">
-            <a class="active nav-link" href="http://localhost:4200/User/home-user">Home</a>
+            <a class="active nav-link" href={{home_url}}>Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="http://localhost:4200/about/about">About</a>
+            <a class="nav-link" href={{about_url}}>About</a>
           </li>
         </ul>
 
       </div>
       <button type="button" class="btn btn-success" (click)="logout()" >Logout</button>
 
-      <a href="#" class="fa fa-facebook"></a>
-      <a href="#" class="fa fa-youtube"></a>
-      <a href="#" class="fa fa-instagram"></a>
+      
+      <a href="https://www.facebook.com/100616661693670?referrer=whatsapp" class="fa fa-facebook"></a>
+      <a href="https://www.youtube.com/channel/UCLKv0PpGHejbXyguMeynlcQ?view_as=subscriber" class="fa fa-youtube"></a>
+      <a href="https://www.facebook.com/100616661693670?referrer=whatsapp" class="fa fa-instagram"></a>   
      
     </nav>
     
@@ -36,15 +36,13 @@
 
     </div>
     <br>
-
-
     <div class="raw">
     
         <div class="col-2">
         
         </div>
     <div class="col-8">
-        <button type="button" class="btn btn-danger ">SUBSCRIBE</button>
+        <a href="https://www.youtube.com/channel/UCLKv0PpGHejbXyguMeynlcQ?view_as=subscriber" class="btn btn-danger ">SUBSCRIBE</a>
     </div>
 
     <div class="col-2">
@@ -62,62 +60,66 @@
 
     <div class="container" style="margin-top:30px">
 
-        <div class="row">        
-            <div class="col-sm-12">
+        <div class="container" style="margin-top:30px">
 
-            <section id="video">           
-                <div class="row justify-content-center mb-20">
-                    <div class="col-xl-10">
-                      
-                        <div class="row align-items-center">
-
-                            <div class="name">
-                                <h4>(06). Denena Thuru Ma -covered by Himalayan-Official Lyrics video -UNISONS</h4>
-                                <p>18 June, 2020</p>
-                            </div>
+            <div class="row">        
+                <div class="col-sm-12">
+    
+                <section id="video">           
+                    <div class="row justify-content-center mb-20">
+                        <div class="col-xl-10">
                           
-                             <div class="col-xl-9 col-md-9">
-                                      
-                              <div class="music_field">
-                                                 
-                                  <div class="audio_name">
-                                            
-                                                           
-                                                          <div class="embed-responsive embed-responsive-21by9">
-                                                            <iframe class="embed-responsive-item" width="90%" height="100%" src="https://www.youtube.com/embed/IOJIUoxTHjw"  frameborder="0" allowfullscreen></iframe>
-                                                          </div>	
-                                                         
-                                  </div>
-                              </div>
-                             </div>
-                             <div class="col-xl-2 col-md-2">
-                                <div class="music_btn">
-                                <div class="container">
-            
-                                    <a href="#" class="btn btn-info btn-lg">
-                                    <i class="fa fa-thumbs-o-up" aria-hidden="true"> Like</i>
-                                    <span class="badge badge-light"> 24 </span>
-                                    </a>
-
-                                    <p>
-                                    Hit your like to this video.
-                                    </p> 
-
-                                </div> 
+                            <div class="row align-items-center">
+    
+                                <div class="name">
+                                    <h4>{{videos[0].title}}</h4>
+                                    <p>{{videos[0].upload_date}}</p>
+                                    <!-- <h4>"{{videos[0].url}}"</h4> -->
                                 </div>
-                             </div>
-                      		
-                      </div>
-                  </div>
+                              
+                                 <div class="col-xl-9 col-md-9">
+                                          
+                                  <div class="music_field">
+                                                     
+                                      <div class="audio_name">    
+                                                              
+                                   <!-- <button type="submit" class="btn btn-success"  >Load</button>  -->
 
-              </div>		
-          </section>           
+                                   <div class="audio_name">     
+                                    <div class="embed-responsive embed-responsive-21by9">
+                                        <iframe class="embed-responsive-item" width="90%" height="100%"  [src]="Load(videos[0].url)" frameborder="0" allowfullscreen></iframe>
+                                      </div>	                     
+                                  </div>
+                                 
+                                    </div>
+                                  </div>
+                                 </div>
+                                 <div class="col-xl-2 col-md-2">
+                                    <div class="music_btn">
+                                    <div class="container">
+                
+                                        <a  class="btn btn-info btn-lg" (click)='addLike(videos[0].video_id)'>
+                                        <i class="fa fa-thumbs-o-up" aria-hidden="true"> Like</i>
+                                        <span class="badge badge-light"> {{videos[0].likes}} </span>
+                                        </a>
+                                        <p>
+                                            Hit your like to this video.
+                                            </p> 
+                                    </div> 
+                                    </div>
+                                 </div>
+                                  
+                          </div>
+                      </div>
+    
+                  </div>		
+              </section>           
+            </div>
+            </div>     
         </div>
-        </div>     
     </div>
 
 
-<br>
 <br>
 <br>
 <br>
@@ -126,284 +128,75 @@
     <br>
     <br>
     <div class="container" style="margin-top:30px">
-    <div class="row">        
-        <div class="col-sm-12">
-
-        <section id="video">           
-            <div class="row justify-content-center mb-20">
-                <div class="col-xl-10">
-                  
-                    <div class="row align-items-center">
-
-                        <div class="name">
-                            <h4>(05). Poddiye (8D-Audio) _Singer- Sadara Bandara_Official Lyrics video- UNISONS</h4>
-                            <p>10 June, 2020</p>
-                        </div>
-                         
-                       	
-                         <div class="col-xl-9 col-md-9">
-                                  
-                          <div class="music_field">
-                                             
-                              <div class="audio_name">     
-                                <div class="embed-responsive embed-responsive-21by9">
-                                    <iframe class="embed-responsive-item" width="90%" height="100%" src="https://www.youtube.com/embed/m0gfNpi_z4I" frameborder="0" allowfullscreen></iframe>
-                                  </div>	
-                                                     
-                              </div>
-                          </div>
-                         </div>
-                         <div class="col-xl-2 col-md-2">
-                            <div class="music_btn">
-                            <div class="container">
-        
-                                <a href="#" class="btn btn-info btn-lg">
-                                <i class="fa fa-thumbs-o-up" aria-hidden="true"> Like</i>
-                                <span class="badge badge-light"> 24 </span>
-                                </a>
-
-                                <p>
-                                Hit your like to this video.
-                                </p> 
-
-                            </div> 
-                            </div>
-                         </div>
-                          
-                  </div>
-              </div>
-
-          </div>		
-      </section>           
-    </div>
-    </div> 
-    <br>
-    <br>
-    <br>
-    <br>
-    <div class="row">        
-        <div class="col-sm-12">
-
-        <section id="video">           
-            <div class="row justify-content-center mb-20">
-                <div class="col-xl-10">
-                  
-                    <div class="row align-items-center">
-
-
-                        <div class="name">
-                            <h4>(04 ).Apa hamuweema wenweema _ Covered By -Dulaj Danushka _ Lyrics video.</h4>
-                            <p>2 June, 2020</p>
-                        </div>
-                      
-                         <div class="col-xl-9 col-md-9">
-                                  
-                          <div class="music_field">
-                                             
-                              <div class="audio_name">     
-                                <div class="embed-responsive embed-responsive-21by9">
-                                    <iframe class="embed-responsive-item" width="90%" height="100%" src="https://www.youtube.com/embed/mMGrolZV92I" frameborder="0" allowfullscreen></iframe>
-                                  </div>
-                                                     
-                              </div>
-                          </div>
-                         </div>
-                         <div class="col-xl-2 col-md-2">
-                            <div class="music_btn">
-                            <div class="container">
-        
-                                <a href="#" class="btn btn-info btn-lg">
-                                <i class="fa fa-thumbs-o-up" aria-hidden="true"> Like</i>
-                                <span class="badge badge-light"> 24 </span>
-                                </a>
-
-                                <p>
-                                Hit your like to this video.
-                                </p> 
-
-                            </div> 
-                            </div>
-                         </div>
-                          
-                  </div>
-              </div>
-
-          </div>		
-      </section>           
-    </div>
-    </div> 
-    <br>
-    <br>
-    <br>
-    <br>
-    <div class="row">        
-        <div class="col-sm-12">
-
-        <section id="video">           
-            <div class="row justify-content-center mb-20">
-                <div class="col-xl-10">
-                  
-                    <div class="row align-items-center">
-
-                        <div class="name">
-                            <h4>(03).Sebalanani oba _Cover by- Dhanushka Dharmasiri _Official Lyrics video -UNISONS</h4>
-                            <p>18 May, 2020</p>
-                        </div>
-                         
-                       
-                      
-                         <div class="col-xl-9 col-md-9">
-                                  
-                          <div class="music_field">
-                                             
-                              <div class="audio_name">     
-                                <div class="embed-responsive embed-responsive-21by9">
-                                    <iframe class="embed-responsive-item" width="90%" height="100%" src="https://www.youtube.com/embed/TKtq5SAyUok" frameborder="0" allowfullscreen></iframe>
-                                  </div>		
-                                                     
-                              </div>
-                          </div>
-                         </div>
-                         <div class="col-xl-2 col-md-2">
-                            <div class="music_btn">
-                            <div class="container">
-        
-                                <a href="#" class="btn btn-info btn-lg">
-                                <i class="fa fa-thumbs-o-up" aria-hidden="true"> Like</i>
-                                <span class="badge badge-light"> 24 </span>
-                                </a>
-
-                                <p>
-                                Hit your like to this video.
-                                </p> 
-
-                            </div> 
-                            </div>
-                         </div>
-                          
-                  </div>
-              </div>
-
-          </div>		
-      </section>           
-    </div>
-    </div> 
-    <br>
-    <br>
-    <br>
-    <br>
-
-    <div class="row">        
-        <div class="col-sm-12">
-
-        <section id="video">           
-            <div class="row justify-content-center mb-20">
-                <div class="col-xl-10">
-                  
-                    <div class="row align-items-center">
-
-                        <div class="name">
-                            <h4>(02). Mage Adara Landu -(Lyrics video)- Singer - D TAP_Official Lyrics video- UNISONS</h4>
-                            <p> 15 May, 2020</p>
-                        </div>
-                         
-                        
-                         <div class="col-xl-9 col-md-9">
-                                  
-                          <div class="music_field">
-                                             
-                              <div class="audio_name">     
-                                <div class="embed-responsive embed-responsive-21by9">
-                                    <iframe class="embed-responsive-item" width="90%" height="100%" src="https://www.youtube.com/embed/gHl93F3x6Cs" frameborder="0" allowfullscreen></iframe>
-                                  </div>		
-                                                     
-                              </div>
-                          </div>
-                         </div>
-                         <div class="col-xl-2 col-md-2">
-                            <div class="music_btn">
-                            <div class="container">
-        
-                                <a href="#" class="btn btn-info btn-lg">
-                                <i class="fa fa-thumbs-o-up" aria-hidden="true"> Like</i>
-                                <span class="badge badge-light"> 24 </span>
-                                </a>
-
-                                <p>
-                                Hit your like to this video.
-                                </p> 
-
-                            </div> 
-                            </div>
-                         </div>
-                          
-                  </div>
-              </div>
-
-          </div>		
-      </section>           
-    </div>
-    </div> 
-    <br>
-    <br>
-    <br>
-    <br>
-    <div class="row">        
-        <div class="col-sm-12">
-
-        <section id="video">           
-            <div class="row justify-content-center mb-20">
-                <div class="col-xl-10">
-                  
-                    <div class="row align-items-center">
-
-                        <div class="name">
-                            <h4>(01) .Maa( Laadla ) Reprise Version -Teri Ungli pakad ke chala_ Lyrics video- UNISONS</h4>
-                            <p>4 May, 2020</p>
-                        </div>
-                         <div class="col-xl-9 col-md-9">
-                                  
-                          <div class="music_field">
-                                             
-                              <div class="audio_name">     
-                                                     <div class="embed-responsive embed-responsive-21by9">
-                          <iframe class="embed-responsive-item" width="90%" height="100%" src="https://www.youtube.com/embed/CAFst74RmsY" frameborder="0" allowfullscreen></iframe>
-                        </div>		
-                                                     
-                              </div>
-                          </div>
-                         </div>
-                         <div class="col-xl-2 col-md-2">
-                            <div class="music_btn">
-                            <div class="container">
-        
-                                <a href="#" class="btn btn-info btn-lg">
-                                <i class="fa fa-thumbs-o-up" aria-hidden="true"> Like</i>
-                                <span class="badge badge-light"> 24 </span>
-                                </a>
-
-                                <p>
-                                Hit your like to this video.
-                                </p> 
-
-                            </div> 
-                            </div>
-                         </div>
-                          
-                  </div>
-              </div>
-
-          </div>		
-      </section>           
-    </div>
-    </div> 
+        <div class="row" *ngFor="let item of videos" >        
+            <div class="col-sm-12">
     
-    <br>
+            <section id="video">           
+                <div class="row justify-content-center mb-20">
+                    <div class="col-xl-10">
+                      
+                        <div class="row align-items-center">
+    
+                            <div class="name">
+                                <h4>{{item.title}}</h4>
+                                <p>{{item.upload_date}}</p>
+                            </div>
+                             
+                             <div class="col-xl-9 col-md-9">
+                                      
+                              <div class="music_field">
+                                                 
+                                   <div class="audio_name">     
+                                    <div class="embed-responsive embed-responsive-21by9">
+                                        <iframe class="embed-responsive-item" width="90%" height="100%" [src]="Load(item.url)" frameborder="0" allowfullscreen></iframe>
+                                      </div>	                     
+                                  </div> 
+                                 
 
+                                  <!-- <iframe class="embed-responsive-item" [src]="Load(item.url)" width="90%" height="100%" frameborder="0" 
+                                  allowfullscreen></iframe> -->
+
+                              </div>
+                             </div>
+                             <div class="col-xl-2 col-md-2">
+                                <div class="music_btn">
+                                <div class="container">
+            
+                                    <a  class="btn btn-info btn-lg" (click)='addLike(item.video_id)'>
+                                    <i class="fa fa-thumbs-o-up" aria-hidden="true"> Like</i>
+                                    <span class="badge badge-light"> {{item.likes}} </span>
+                                    </a>
+                                    <p>
+                                        Hit your like to this video.
+                                        </p> 
+                                </div> 
+                                </div>
+                             </div>
+                              
+                      </div>
+                  </div>
+    
+              </div>		
+          </section>  
+          <br>
+          <br>
+          <br>         
+        </div>
+        
+    
+       
+    
+    
+    </div> 
+
+    <br>
+   
+    <br>
 </div>    
+
+
+
 <br>
-    
-  
         <footer class="footer">
             <div class="footer_top">
                 <div class="container">
@@ -416,7 +209,8 @@
                                     <div class="subscribe-from">
                                             <form action="#">
                                                     <input type="text" placeholder="Enter your mail">
-                                                    <button type="submit" >Subscribe</button>
+                                                    <a href="https://www.youtube.com/channel/UCLKv0PpGHejbXyguMeynlcQ?view_as=subscriber" class="btn btn-danger">SUBSCRIBE</a>
+                                                   
                                                 </form>
                                     </div>
                                     <p class="sub_text">Subscribe our channel.Join with us.</p>
@@ -431,22 +225,22 @@
                                     <h3 class="footer_title">
                                         Contact Me
                                 </h3>
-                                <a href="#"><i style="font-size:24px" class="fa">&#xf0d5;</i>  lahiruhewagama98@gmail.com
-                                        </a>
+                                <strong><i style="font-size:24px" class="fa">&#xf0d5;</i>  lahiruhewagama98@gmail.com
+                                        </strong>
 <br>
 <br>
-                                    <a href="#"><i style="font-size:24px" class="fa fa-phone" aria-hidden="true"></i>  +94-710158125
-                                    </a><br>
+                                    <strong><i style="font-size:24px" class="fa fa-phone" aria-hidden="true"></i>  +94-710158125
+                                    <br></strong>
 <br>
-                                    <a href="#"><i style="font-size:24px" class="fa fa-home"></i>  1/64, Pallegama ,Hungama</a>
+                                    <i style="font-size:24px" class="fa fa-home"></i> <strong>1/64, Pallegama ,Hungama </strong> 
                                
                                     <div class="row">
 
                                         <div class="socail_links">
                                             
-                                            <a href="#" class="fa fa-facebook"></a>
-                                            <a href="#" class="fa fa-youtube"></a>
-                                            <a href="#" class="fa fa-instagram"></a>                                                   
+                                            <a href="https://www.facebook.com/100616661693670?referrer=whatsapp" class="fa fa-facebook"></a>
+                                            <a href="https://www.youtube.com/channel/UCLKv0PpGHejbXyguMeynlcQ?view_as=subscriber" class="fa fa-youtube"></a>
+                                            <a href="https://www.facebook.com/100616661693670?referrer=whatsapp" class="fa fa-instagram"></a>                                                   
                                             </div>
                         
                                     </div>

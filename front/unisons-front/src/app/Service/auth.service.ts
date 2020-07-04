@@ -4,6 +4,7 @@ import { API_URL } from '../config/constants';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { User } from 'src/app/user';
 
+
 @Injectable({
   providedIn: 'root',
 })
@@ -24,4 +25,6 @@ export class AuthService {
     console.log(user);
     return this.httpClient.post(url, user);
   }
+
+
 }
